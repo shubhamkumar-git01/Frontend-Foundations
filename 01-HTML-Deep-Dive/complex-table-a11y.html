@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Accessible Table</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; background-color: #f9fafb; color: #111827; }
+        table { width: 100%; border-collapse: collapse; margin-top: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background: white; }
+        caption { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; text-align: left; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px 16px; text-align: left; }
+        th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+        /* Zebra striping for readability */
+        tbody tr:nth-child(even) { background-color: #f9fafb; }
+        tbody tr:hover { background-color: #f3f4f6; }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        A11y Note: Tables are often read terribly by screen readers if not structured right.
+        Using <caption>, <thead>, <tbody>, and scope attributes makes it 100x better.
+    -->
+    <table>
+        <caption>2026 Web Framework Performance Metrics</caption>
+        
+        <thead>
+            <tr>
+                <!-- scope="col" tells the screen reader this header applies to the whole column -->
+                <th scope="col">Framework</th>
+                <th scope="col">Initial Load (ms)</th>
+                <th scope="col">Bundle Size (KB)</th>
+                <th scope="col">Learning Curve</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <!-- scope="row" tells the screen reader this is the header for this specific row -->
+                <th scope="row">Vanilla JS</th>
+                <td>45ms</td>
+                <td>0 KB</td>
+                <td>Steep (Core Basics)</td>
+            </tr>
+            <tr>
+                <th scope="row">React 19</th>
+                <td>120ms</td>
+                <td>42 KB</td>
+                <td>Moderate</td>
+            </tr>
+            <tr>
+                <th scope="row">Next.js 15</th>
+                <td>150ms</td>
+                <td>85 KB</td>
+                <td>High (Server Components)</td>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <!-- colspan spans columns -->
+                <td colspan="4" style="text-align: center; font-style: italic; color: #6b7280;">
+                    Note: Metrics are approximate and depend on project architecture.
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

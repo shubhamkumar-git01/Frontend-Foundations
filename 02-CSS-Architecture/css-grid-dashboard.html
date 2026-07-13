@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Dashboard Architecture</title>
+    <style>
+        /* CSS Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e2e8f0; color: #333; }
+
+        /* 
+           GRID TEMPLATE AREAS 
+           This is the most powerful layout feature in CSS. 
+           It allows us to literally "draw" our layout in code!
+        */
+        .dashboard-container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 60px 1fr 40px;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main"
+                "sidebar footer";
+            gap: 1px; /* Creates subtle borders */
+        }
+
+        /* Assigning elements to the grid areas */
+        .sidebar { grid-area: sidebar; background: #1e293b; color: white; padding: 20px; }
+        .header { grid-area: header; background: white; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+        .main { grid-area: main; background: #f8fafc; padding: 20px; overflow-y: auto; }
+        .footer { grid-area: footer; background: white; padding: 0 20px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+
+        /* The inner dashboard grid inside 'main' */
+        .widget-grid {
+            display: grid;
+            /* Auto-fit creates as many columns as will fit, min 300px wide, max 1fr */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .widget {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: 200px;
+        }
+
+        /* Making one widget span 2 columns if space allows */
+        .widget.wide {
+            grid-column: span 2;
+        }
+
+        /* MOBILE RESPONSIVE via Media Queries */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr; /* Single column layout */
+                grid-template-rows: 60px auto 1fr 40px;
+                grid-template-areas:
+                    "header"
+                    "sidebar" /* Sidebar becomes a horizontal nav under header */
+                    "main"
+                    "footer";
+            }
+            
+            .widget.wide {
+                grid-column: span 1; /* Reset span on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul style="list-style: none; margin-top: 20px; line-height: 2;">
+                <li>🏠 Home</li>
+                <li>📊 Analytics</li>
+                <li>⚙️ Settings</li>
+            </ul>
+        </aside>
+
+        <header class="header">
+            <div>Welcome back, Shubham!</div>
+            <div>Search...</div>
+        </header>
+
+        <main class="main">
+            <h2>Overview</h2>
+            
+            <div class="widget-grid">
+                <div class="widget">Revenue: $10,400</div>
+                <div class="widget">Active Users: 1,234</div>
+                <div class="widget wide">Traffic Graph (Spans 2 columns)</div>
+                <div class="widget">Conversion Rate: 4.5%</div>
+                <div class="widget">Bounce Rate: 42%</div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            &copy; 2026 Admin Panel
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!-- 
+  Topic: BEM (Block, Element, Modifier)
+  Notes: A naming convention for classes that makes CSS highly maintainable.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Block */
+        .card { border: 1px solid #ccc; padding: 20px; width: 200px; border-radius: 8px; }
+        /* Element */
+        .card__title { font-size: 1.5rem; color: #333; }
+        .card__text { color: #666; }
+        /* Modifier */
+        .card--dark { background: #222; border-color: #444; }
+        .card--dark .card__title { color: #fff; }
+        .card--dark .card__text { color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2 class="card__title">Normal Card</h2>
+        <p class="card__text">Some details here.</p>
+    </div>
+    <br>
+    <div class="card card--dark">
+        <h2 class="card__title">Dark Card</h2>
+        <p class="card__text">Some details here.</p>
+    </div>
+</body>
+</html>

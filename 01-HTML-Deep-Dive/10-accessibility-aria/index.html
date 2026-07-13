@@ -1,0 +1,17 @@
+﻿<!-- 
+  Topic: Web Accessibility (A11y) & ARIA 
+  Notes:
+  - ARIA (Accessible Rich Internet Applications) attributes help screen readers.
+  - Use semantic HTML first. ARIA is a fallback when native elements don't suffice.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2>Accessible Buttons</h2>
+    <!-- Good: Native button -->
+    <button>Close</button>
+    
+    <!-- Bad: Div as button (needs ARIA to fix it) -->
+    <div role="button" tabindex="0" aria-label="Close dialog" onclick="alert('Closed')">X</div>
+</body>
+</html>

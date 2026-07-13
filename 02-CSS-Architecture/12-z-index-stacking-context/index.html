@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box { position: absolute; width: 100px; height: 100px; color: white; padding: 10px; }
+        .bottom { background: red; top: 20px; left: 20px; z-index: 1; }
+        .middle { background: green; top: 40px; left: 40px; z-index: 2; }
+        .top { background: blue; top: 60px; left: 60px; z-index: 3; }
+    </style>
+</head>
+<body>
+    <!-- z-index only works on positioned elements! -->
+    <div class="box bottom">z: 1</div>
+    <div class="box middle">z: 2</div>
+    <div class="box top">z: 3</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!-- 
+  Topic: SVG and Canvas 
+  Notes:
+  - SVG is vector-based (XML). Good for logos and icons. Scales infinitely without losing quality.
+  - Canvas is pixel-based (bitmap). Used for game graphics or heavy rendering via JS.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2>SVG Circle</h2>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+    <h2>Canvas (Needs JS to draw)</h2>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+    <script>
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+    </script>
+</body>
+</html>

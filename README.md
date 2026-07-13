@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>🌐 Frontend Foundations</h1>
+  <a href="https://github.com/shubhamkumar-git01">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=E34F26&center=true&vCenter=true&width=500&lines=Frontend+Foundations;HTML5,+CSS3,+Vanilla+JS;Mastering+the+Browser" alt="Typing SVG" />
+  </a>
   <p><b>Volume 1 of the Complete Full Stack Engineering Syllabus</b></p>
 
   <!-- Badges -->

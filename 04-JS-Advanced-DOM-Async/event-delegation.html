@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Delegation</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        ul { list-style-type: none; padding: 0; max-width: 300px; }
+        li { padding: 10px; background: #eee; margin-bottom: 5px; cursor: pointer; border-radius: 4px; }
+        li:hover { background: #ddd; }
+        button { margin-bottom: 20px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Event Delegation Practice</h2>
+    <p>Click any item, or add a new one and click it!</p>
+    
+    <button id="addItemBtn">Add New Item</button>
+
+    <!-- We will attach ONE event listener to this UL, not to individual LIs -->
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const ul = document.getElementById('itemList');
+        const btn = document.getElementById('addItemBtn');
+        let counter = 4;
+
+        // Adding new items dynamically
+        btn.addEventListener('click', () => {
+            const li = document.createElement('li');
+            li.textContent = 'Item ' + counter++;
+            ul.appendChild(li);
+        });
+
+        // EVENT DELEGATION: Listen on the parent!
+        // If we attached listeners to LIs on page load, the new ones added later wouldn't trigger!
+        ul.addEventListener('click', (event) => {
+            // Check if the clicked target was actually an LI
+            if (event.target.tagName === 'LI') {
+                alert('You clicked on: ' + event.target.textContent);
+                // We can even manipulate it:
+                event.target.style.backgroundColor = '#a8e6cf';
+            }
+        });
+    </script>
+</body>
+</html>

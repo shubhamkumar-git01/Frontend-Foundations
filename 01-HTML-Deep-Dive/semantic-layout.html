@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Practice</title>
+    <!-- Note: Keeping CSS minimal to focus strictly on HTML structure -->
+    <style>
+        body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        header, nav, main, article, aside, footer { padding: 15px; margin-bottom: 10px; border: 2px solid #ccc; border-radius: 8px; }
+        header { background: #e0f7fa; }
+        main { display: flex; gap: 20px; }
+        article { flex: 3; background: #fff3e0; }
+        aside { flex: 1; background: #fce4ec; }
+        footer { background: #eceff1; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- MAIN HEADER: Represents the introductory content -->
+    <header>
+        <h1>My Developer Blog</h1>
+        <p>Documenting my Full Stack Journey</p>
+    </header>
+
+    <!-- NAVIGATION: Main site links -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN: The dominant content of the page -->
+    <main>
+        <!-- ARTICLE: A self-contained composition -->
+        <article>
+            <h2>Understanding Semantic HTML</h2>
+            <p>Today I learned why we shouldn't just use divs everywhere. Screen readers rely on semantic tags to navigate the page for visually impaired users.</p>
+            
+            <section>
+                <h3>Why it matters</h3>
+                <p>Search engines like Google also give higher weight to semantic tags when crawling pages for SEO.</p>
+            </section>
+        </article>
+
+        <!-- ASIDE: Content indirectly related to the main content -->
+        <aside>
+            <h3>Author Info</h3>
+            <p><strong>Shubham Kumar</strong></p>
+            <p>Learning Web Dev since day 1.</p>
+        </aside>
+    </main>
+
+    <!-- FOOTER: Footer for the nearest sectioning content -->
+    <footer>
+        <p>&copy; 2026 Shubham Kumar. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

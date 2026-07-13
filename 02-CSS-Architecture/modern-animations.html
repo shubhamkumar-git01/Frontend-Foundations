@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern CSS Animations</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #282c34; margin: 0; }
+        
+        .pulse-btn {
+            background: #ff4757;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+            /* Transition for hover state */
+            transition: transform 0.3s ease;
+            /* Keyframe animation for idle state */
+            animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+        }
+
+        .pulse-btn:hover {
+            transform: scale(1.05) translateY(-3px);
+            animation: none; /* Stop pulsing on hover */
+        }
+
+        /* The Keyframes */
+        @keyframes pulse {
+            to {
+                box-shadow: 0 0 0 25px rgba(255, 71, 87, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- A button that creates a radar pulse effect using box-shadow animation -->
+    <button class="pulse-btn">Click Me!</button>
+</body>
+</html>

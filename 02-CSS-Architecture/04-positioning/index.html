@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .relative-parent { position: relative; width: 300px; height: 300px; background: #eee; }
+        /* Absolute is positioned relative to its closest relative parent! */
+        .absolute-child { position: absolute; top: 10px; right: 10px; background: red; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="relative-parent">
+        Parent (Relative)
+        <div class="absolute-child">Child (Absolute)</div>
+    </div>
+</body>
+</html>

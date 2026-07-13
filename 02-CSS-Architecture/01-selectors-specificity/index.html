@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Element selector: 0,0,0,1 */
+        p { color: black; }
+        
+        /* Class selector: 0,0,1,0 */
+        .highlight { color: blue; }
+        
+        /* ID selector: 0,1,0,0 (Wins!) */
+        #special { color: red; }
+    </style>
+</head>
+<body>
+    <p class="highlight" id="special">What color am I? (I am red because ID wins!)</p>
+</body>
+</html>

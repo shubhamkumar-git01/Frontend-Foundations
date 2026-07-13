@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <h2>Background Color: <span class="color">#FFFFFF</span></h2>
+    <button class="btn">Change Color</button>
+    <script>
+        const colors = ["#ff5733", "#33ff57", "#3357ff", "#f3ff33", "#ff33a1"];
+        const btn = document.querySelector(".btn");
+        const colorSpan = document.querySelector(".color");
+        btn.addEventListener("click", () => {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+            colorSpan.textContent = randomColor;
+        });
+    </script>
+</body>
+</html>

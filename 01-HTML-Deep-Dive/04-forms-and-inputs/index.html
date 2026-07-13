@@ -1,0 +1,34 @@
+﻿<!-- 
+  Topic: Forms & Validation
+  Notes:
+  - The 'for' attribute in <label> must match the 'id' in <input>.
+  - HTML5 native validation (required, type="email") is powerful!
+-->
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>User Registration</h2>
+    <form action="/submit" method="POST">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required minlength="3">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+            <p>Gender:</p>
+            <!-- Name attribute groups radio buttons together -->
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

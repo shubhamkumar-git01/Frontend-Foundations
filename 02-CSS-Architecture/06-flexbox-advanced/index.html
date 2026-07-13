@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container { display: flex; height: 200px; }
+        .sidebar { flex-basis: 200px; flex-shrink: 0; background: navy; color: white; }
+        /* flex-grow: 1 means it will take up all remaining space */
+        .main { flex-grow: 1; background: lightblue; } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main Content</div>
+    </div>
+</body>
+</html>
